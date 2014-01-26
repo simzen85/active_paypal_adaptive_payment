@@ -302,8 +302,8 @@ module ActiveMerchant
           end
 
           # required preapproval fields
-          x.endingDate opts[:end_date].strftime("%Y-%m-%dZ")
-          x.startingDate opts[:start_date].strftime("%Y-%m-%dZ")
+          x.endingDate opts[:end_date].strftime("%Y-%m-%dT%H:%M:%SZ")
+          x.startingDate opts[:start_date].strftime("%Y-%m-%dT%H:%M:%SZ")
           x.maxTotalAmountOfAllPayments opts[:max_amount]
           x.maxAmountPerPayment opts[:maxAmountPerPayment] if opts.has_key?(:maxAmountPerPayment)
           x.memo opts[:memo] if opts.has_key?(:memo)
